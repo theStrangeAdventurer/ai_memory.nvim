@@ -7,11 +7,6 @@ M.options = {
 	memory_files = { vim.fn.getcwd() .. "/memory-bank" },
 }
 
-function M.setup(opts)
-	vim.tbl_deep_extend("force", M.options, opts or {})
-	return M
-end
-
 function M.read_memory_files()
 	local scan = require 'plenary.scandir'
 	--- @class FileContent
@@ -44,6 +39,49 @@ function M.read_memory_files()
 		end
 	end
 	return contents
+end
+
+function M.register(opts)
+	vim.schedule(function()
+		vim.tbl_deep_extend("force", opts.config.config.strategies.chat.variables, {
+			memory_bank = {
+				callback = function(params)
+					local files = M.read_memory_files()
+					local content = ""
+
+					if type(files) == "table" then
+						for _, file in ipairs(files) do
+							content = content ..
+								"\n\n--- " ..
+								tostring(file.path) ..
+								" start: ---\n\n" .. tostring(file.content) .. "\n\n --- end --- \n\n"
+						end
+					else
+						content = "\n\n--- unknown start: ---\n\n" .. tostring(files) .. "\n\n --- end --- \n\n"
+					end
+					return "Resource memory_bank: \n\n--- this is important project context ---\n\n" .. content .. ""
+				end,
+				description = "Return very important information for project",
+				id = "memory_bank",
+			},
+		})
+	end)
+	return M
+end
+
+function M.setup(opts)
+	vim.tbl_deep_extend("force", M.options, opts or {})
+
+	print(vim.inspect({ testCall = true, pluginOptions = M.options }))
+
+	local ok, cc_config = pcall(require, "codecompanion.config")
+	if not ok then
+		return
+	end
+
+	M.register({ config = cc_config }) -- FIXME: add options
+
+	return M
 end
 
 function M.get_info()
