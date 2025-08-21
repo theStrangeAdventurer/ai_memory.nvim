@@ -2,6 +2,7 @@
 
 ![AI Memory Demo](static/ai_memory_demo.gif)
 
+This extension currently only works with 'olimorris/codecompanion.nvim' and adds the ability to use a resource ([variable](https://codecompanion.olimorris.dev/usage/chat-buffer/variables.html#using-variables)) in the chat window with LLM.
 
 ## Minimal Configuration
 
