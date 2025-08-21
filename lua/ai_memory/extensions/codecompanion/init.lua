@@ -37,7 +37,6 @@ function M.read_memory_files()
 			path = vim.fn.getcwd() .. "/" .. _dir.dir
 		end
 
-
 		---@type string[]
 		local data = scan.scan_dir(path, { hidden = false, depth = 5 })
 
@@ -81,11 +80,7 @@ function M.register(params)
 			goto continue
 		end
 
-		if key == "all" then
-			key = M.options.resource_name
-		else
-			key = M.options.resource_name .. ":" .. key
-		end
+		key = M.options.resource_name .. ":" .. key
 
 		config.strategies.chat.variables[key] = {
 			callback = function()
