@@ -22,7 +22,7 @@
                             "./memory-bank", -- will be available in #{memory_bank:./memory-bank} variable
                             "../some-parent-dir", -- will be available in codecompanion chat window as #{memory_bank:../some-parent-dir}
                             { dir = "/absolute/path/to/dir", name = "awesome" }, -- will be available as #{memory_bank:awesome} variable
-                            { dir = "./memory-bank/frontend", name = "frontend" }, -- will be available as #{memory_bank:awesome} variable
+                            { dir = "./memory-bank/frontend", name = "frontend" }, -- will be available as #{memory_bank:frontend} variable
 
                         }, 
 					}

@@ -75,7 +75,6 @@ function M.register(params)
 	end
 
 	local files = M.read_memory_files()
-	print(vim.inspect({ files = files }))
 
 	for key, value in pairs(files) do
 		if not value or (type(value) == "table" and not next(value)) then
