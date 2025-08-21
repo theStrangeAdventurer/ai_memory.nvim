@@ -6,7 +6,7 @@ M.options = {
 	--- @type string
 	resource_name = "memory_bank",
 	---@type (string | { dir: string, name: string })[]
-	memory_files = { "./memory-bank" },
+	memory_files = { os.getenv("AI_MEMORY_DEFAULT_MEMORY_FILES_PATH") or "./memory-bank" },
 }
 
 function M.read_memory_files()
