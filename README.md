@@ -11,6 +11,11 @@ Variables are automatically created for all nested directories (for example, for
 
 > This extension currently only works with 'olimorris/codecompanion.nvim' and adds the ability to use a resource ([variable](https://codecompanion.olimorris.dev/usage/chat-buffer/variables.html#using-variables)) in the chat window with LLM.
 
+### How i can change default directory ?
+
+You can just set environment variable AI_MEMORY_DEFAULT_MEMORY_FILES_PATH and plugin will use it by default
+
+
 ## Minimal Configuration
 
 ```lua
