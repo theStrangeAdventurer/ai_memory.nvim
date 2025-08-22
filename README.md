@@ -2,7 +2,8 @@
 
 ### What can this plugin do?
 He looks at the directory (by default, cwd/memory-bank or whatever will be transferred through the configuration) and literally scans it.
-> It is expected that this directory (or directories) contains a set of md files with a context 
+> It is expected that this directory (or directories) contains a set of md files with a context
+
 After that, we have a set of variables that we can put into context. 
 Variables are automatically created for all nested directories (for example, for the /memory-bank/fronted directory), the variable #{memory_bank:./frontend} will be created
 
