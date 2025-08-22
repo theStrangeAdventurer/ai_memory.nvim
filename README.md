@@ -65,7 +65,7 @@ This extension currently only works with 'olimorris/codecompanion.nvim' and adds
 In codecompanion chat you can easely use #{memory_bank} variable and also #{}
 
 ```
-#{memory_bank} What are you see in memory_bank?
+#{memory_bank:all} What are you see in memory_bank?
 ```
 
 ```
