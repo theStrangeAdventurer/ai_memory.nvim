@@ -46,8 +46,8 @@ This extension currently only works with 'olimorris/codecompanion.nvim' and adds
 				ai_memory = {
 					callback = "ai_memory.extensions.codecompanion",
 					opts = {
-						resource_name = 'memory_bank' -- default: env.AI_MEMORY_DEFAULT_MEMORY_FILES_PATH or './memory_bank' (variable name) 
-						memory_files = { -- default: cwd .. './memory-bank/'
+						resource_name = 'memory_bank' -- default: memory_bank (variable name in a chat window) 
+						memory_files = { -- default: './memory-bank/' (or env.AI_MEMORY_DEFAULT_MEMORY_FILES_PATH)
                             "./memory-bank", -- will be available in #{memory_bank:./memory-bank} variable
                             "../some-parent-dir", -- will be available in codecompanion chat window as #{memory_bank:../some-parent-dir}
                             { dir = "/absolute/path/to/dir", name = "awesome" }, -- will be available as #{memory_bank:awesome} variable
