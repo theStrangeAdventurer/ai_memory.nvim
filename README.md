@@ -74,5 +74,5 @@ In codecompanion chat you can easely use #{memory_bank} variable and also #{}
 ### Edit
 
 ```
-You should describe your decision short (thesis) in #{memory_bank:frontend} for future reference using @{insert_edit_into_file}
+You should describe your decision short (thesis) in #{memory_bank:frontend} for future reference using @{files} 
 ```
